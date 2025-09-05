@@ -1,0 +1,12 @@
+class Solution:
+    def containsDuplicate(self, nums) -> bool:
+        hashmap = set()
+        for num in nums:
+            if num in hashmap:
+                return True
+            hashmap.add(num)
+        return False
+
+
+solution = Solution()
+print(solution.containsDuplicate([1, 2, 2, 4]))
