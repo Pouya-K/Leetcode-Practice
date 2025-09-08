@@ -6,7 +6,3 @@ class Solution:
                 return True
             hashmap.add(num)
         return False
-
-
-solution = Solution()
-print(solution.containsDuplicate([1, 2, 2, 4]))
