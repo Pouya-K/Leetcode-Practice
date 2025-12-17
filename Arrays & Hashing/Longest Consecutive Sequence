@@ -1,0 +1,22 @@
+from typing import List
+from collections import defaultdict
+
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        convertedArr = defaultdict(bool)
+        maxSequence = 0
+
+        for num in nums:
+            convertedArr[num] = True
+        
+        for num in nums:
+            if num - 1 not in convertedArr:
+                length = 1
+
+                while (num + length) in convertedArr:
+                    length += 1
+                
+                maxSequence = length if length > maxSequence else maxSequence
+        
+        return maxSequence
+        
